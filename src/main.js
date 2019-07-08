@@ -5,6 +5,9 @@ import "./assets/bootstrap/css/bootstrap.css"
 import "./assets/css/index.css"
 Vue.config.productionTip = false
 import router from './router'
+
+import axios from 'axios'
+Vue.prototype.axios = axios
 new Vue({
   render: h => h(App),
   router : router

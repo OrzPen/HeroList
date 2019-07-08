@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import axios from 'axios' 
 export default {
   data() {
     return {
@@ -31,7 +30,7 @@ export default {
   },
   methods : {
     add() {
-      axios.post ("http://localhost:3000/heroes" , this.formData)
+      this.axios.post ("http://localhost:3000/heroes" , this.formData)
       .then((res) => {
           //判断删除成功和失败
           if (res.status == 201) {

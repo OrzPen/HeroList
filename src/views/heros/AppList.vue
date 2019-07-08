@@ -39,7 +39,6 @@
 
 <script>
 //导入axios
-import axios from "axios";
 export default {
   //定义英雄列表页数据
   data() {
@@ -53,7 +52,7 @@ export default {
   },
   methods: {
     getHeros() {
-      axios
+      this.axios
         //开启json-server服务器,虚拟数据服务器
         .get("http://localhost:3000/heroes")
         .then(res => {
@@ -77,7 +76,7 @@ export default {
       if (!confirm("确认删除?")) {
         return false;
       }
-      axios
+      this.axios
         .delete(`http://localhost:3000/heroes/${id}`)
         .then(res => {
           //判断删除成功和失败
