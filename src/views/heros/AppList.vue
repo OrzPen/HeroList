@@ -251,7 +251,43 @@
 </template>
 
 <script>
-export default {};
+//导入axios
+import axios from 'axios'
+export default {
+  //定义英雄列表页数据
+  data() {
+    return {
+      list : []
+    }
+  },
+  //在组件挂载完毕时发送ajax
+  mounted() {
+    this.getHeros()
+  },
+  methods: {
+    getHeros () {
+      axios
+        //开启json-server服务器,虚拟数据服务器
+        .get ('http://localhost:3000/heroes')
+        .then ((res) => {
+          //解构res
+          const {data , status} = res
+          //判断获取成功和失败
+          if (status == 200) {
+            //把获取到的数据添加到实例中准备好的空数组中
+            this.list = data
+            // console.log (this.list)
+          }
+
+        })
+        //获取失败
+        .catch ((err) => {
+          alert ('服务器异常')
+          // console.log (err)
+        })
+    }
+  },
+};
 </script>
 
 <style>
