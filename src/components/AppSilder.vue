@@ -17,7 +17,7 @@
       <li>
         <a href="#">Export</a>
       </li> -->
-      <router-link to="/heros" tag="li">
+      <router-link to="/heroes" tag="li">
         <a>英雄列表</a>
       </router-link>
       <router-link to="/weapons" tag="li">
