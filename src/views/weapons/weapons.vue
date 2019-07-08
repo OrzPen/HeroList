@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid">
+     <div class="container-fluid">
     <div class="row">
       <!-- 右侧 -->
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h2 class="sub-header">英雄管理</h2>
+        <h2 class="sub-header">武器管理</h2>
         <a class="btn btn-success" href="add.html">Add</a>
         <div class="table-responsive">
           <table class="table table-striped">
@@ -251,8 +251,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
+
 </style>
