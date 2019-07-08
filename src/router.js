@@ -18,7 +18,7 @@ const router = new VueRouter ({
     //配置添加英雄页路由
     {name : 'add' , path : '/heroes/add' , component : addHeroes},
     //配置编辑英雄页路由
-    {name : 'editHeroes' , path : '/heroes/edit/:id' , component : editHeroes},
+    {name : 'editHeroes' , path : '/heroes/edit/:id' , component : editHeroes , props : true},
 
     //配置武器和装备路由规则
     {name : 'equips' , path : '/equips' , component : equips},

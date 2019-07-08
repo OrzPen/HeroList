@@ -25,15 +25,43 @@
 </template>
 
 <script>
+//导入axios发送ajax
+import axios from "axios";
+//选项中添加props属性接收外部传递的id值
 export default {
-     data() {
+  props: ["id"],
+  data() {
     return {
-      formData : {
-        name : '',
-        gender : "男"
+      formData: {
+        name: "",
+        gender: "男"
       }
-    }
+    };
   },
+  //组件加载完毕后触发查询函数
+  mounted () {
+      this.loadedit()
+  },
+  methods: {
+    loadedit() {
+      //根据传入id发送ajax查询数据
+      axios
+        .get(`http://localhost:3000/heroes/${this.id}`)
+        .then((res) => {
+            const {data , status} = res
+          //判断查询成功和失败
+          if (status == 200) {
+            //如果成功,更新formData中的数据
+            this.formData = data
+          }
+        })
+        //获取失败
+        .catch(err => {
+          alert("服务器异常" + err);
+          // console.log (err)
+        });
+    }
+  }
 };
 </script>
 
