@@ -11,6 +11,9 @@ import HeroList from './views/heros/AppList.vue'
 import equips from './views/equips/equips.vue'
 import weapons from './views/weapons/weapons.vue'
 const router = new VueRouter ({
+  //设置高亮显示默认类名
+  linkActiveClass : 'active' ,
+  //配置路由规则
   routes : [
     {name : 'home' , path : '/' , redirect : {name:'heroes'}},
     {name : 'heroes' , path : '/heros' , component : HeroList},
