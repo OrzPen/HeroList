@@ -1,17 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id="#app">
+<div class="front">
+  <!-- 使用写好的AppHeader.vue -->
+    <Appheader></Appheader>
+    <!-- 使用写好的Appsilder.vue,如果不用会报错 -->
+    <Appsilder></Appsilder>  
+    <!-- 设置路由占位 -->
+    <router-view></router-view>
+	</div>
+</div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Appheader from './components/AppHeader';
+import Appsilder from './components/AppSilder';
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    //注册AppHeader.vue组件
+    Appheader,
+    Appsilder,
   }
 }
 </script>
