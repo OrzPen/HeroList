@@ -19,7 +19,7 @@
           <option value="女">女</option>
         </select>
       </div>
-      <button type="submit" @click.prevent="add" class="btn btn-success">提交</button>
+      <button type="submit" @click.prevent="update" class="btn btn-success">修改</button>
     </form>
   </div>
 </template>
@@ -60,6 +60,19 @@ export default {
           alert("服务器异常" + err);
           // console.log (err)
         });
+    },
+    update () {
+        //点击按钮发送ajax修改数据
+        axios
+            .put (`http://localhost:3000/heroes/${this.id}` , this.formData)
+            .then ((res) => {
+                if (res.status == 200) {
+                    this.$router.push ({name : 'heroes'})
+                }
+            })
+            .catch ((err) => {
+                alert ("服务器异常" + err)
+            })
     }
   }
 };
