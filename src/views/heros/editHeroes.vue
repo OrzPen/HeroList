@@ -46,7 +46,7 @@ export default {
     loadedit() {
       //根据传入id发送ajax查询数据
       axios
-        .get(`http://localhost:3000/heroes/${this.id}`)
+        .get(`heroes/${this.id}`)
         .then((res) => {
             const {data , status} = res
           //判断查询成功和失败
@@ -64,7 +64,7 @@ export default {
     update () {
         //点击按钮发送ajax修改数据
         this.axios
-            .put (`http://localhost:3000/heroes/${this.id}` , this.formData)
+            .put (`heroes/${this.id}` , this.formData)
             .then ((res) => {
                 if (res.status == 200) {
                     this.$router.push ({name : 'heroes'})

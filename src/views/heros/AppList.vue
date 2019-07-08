@@ -54,7 +54,7 @@ export default {
     getHeros() {
       this.axios
         //开启json-server服务器,虚拟数据服务器
-        .get("http://localhost:3000/heroes")
+        .get("heroes")
         .then(res => {
           //解构res
           const { data, status } = res;
@@ -77,7 +77,7 @@ export default {
         return false;
       }
       this.axios
-        .delete(`http://localhost:3000/heroes/${id}`)
+        .delete(`heroes/${id}`)
         .then(res => {
           //判断删除成功和失败
           if (res.status == 200) {
