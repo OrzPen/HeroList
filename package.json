@@ -31,6 +31,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
     "rules": {
       "vue/no-async-in-computed-properties": "off",
       "vue/no-dupe-keys": "off",
@@ -65,9 +68,6 @@
       "vue/valid-v-pre": "off",
       "vue/valid-v-show": "off",
       "vue/valid-v-text": "off"
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
     }
   },
   "postcss": {
